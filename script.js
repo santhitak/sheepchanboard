@@ -145,11 +145,13 @@ let exportPreset = () => {
         newArr.push(`${x-minX}-${y-minY}`)        
     }
     preset = new Preset(maxX-minX, maxY-minY, newArr)
- 
-    navigator.clipboard.writeText(JSON.stringify({name: name, data: preset})).then(function() {
+    
+    const exportString = JSON.stringify({name: name, data: preset})
+
+    navigator.clipboard.writeText(exportString).then(() => {
         alert('Copied to clipboard')
       }, function(err) {
-        alert('Could not copy to clipboard', err)
+        textToClipboard(exportString)
       });
 }
 
@@ -234,6 +236,10 @@ saveButton.addEventListener('click', (event) => {
 
 applySettingButton.addEventListener('click', (event) => {
     cell_size = parseInt(cellSizeInput.value)
+    if (cell_size === 0) {
+        alert('You cannot divide by 0, dum')
+        return
+    }
     nx = Math.floor(width / cell_size)
     ny = Math.floor(height / cell_size)
     clearBoard()
@@ -243,3 +249,12 @@ applySettingButton.addEventListener('click', (event) => {
 clearBoardButton.addEventListener('click', (event) => {
     clearBoard()
 })
+
+let textToClipboard = (text) => {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
