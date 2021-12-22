@@ -7,8 +7,19 @@ let ny = Math.floor(height / cell_size)
 let canvas = document.querySelector('#mycanvas')
 let ctx = canvas.getContext('2d')
 let drag = false
+let dragged = new Set()
 
 let cell_color = '#FF007F'
+
+
+let cellSizeInput = document.querySelector('#cell-size-input')
+let cellColorInput = document.querySelector('#cell-color-input')
+let applySettingButton = document.querySelector('#apply-button')
+let clearBoardButton = document.querySelector('#clear-button')
+let exportButton = document.querySelector('#export-button')
+let importButton = document.querySelector('#import-button')
+let saveButton = document.querySelector('#save-button')
+
 
 class Preset {
     constructor(width, height, grids) {
@@ -70,12 +81,17 @@ let resizeCanvas = () => {
     drawAll()
 }
 
-let handleMouseClick = (event) => {
-    if (!drag) return
+let handleMouseClick = (event, bypassDragCheck = false) => {
+    if (!drag && !bypassDragCheck) return
     const rect = canvas.getBoundingClientRect()
     x = event.clientX - rect.left
     y = event.clientY - rect.top
     posXY = `${Math.floor(x / cell_size)}-${Math.floor(y / cell_size)}`
+    if (dragged.has(posXY)) {
+        return
+    } else {
+        dragged.add(posXY)
+    }
     if (grids.has(posXY)) {
         grids.delete(posXY)
         eraseCell(posXY)
@@ -84,6 +100,7 @@ let handleMouseClick = (event) => {
         grids.add(posXY)
         drawCell(posXY)
     }
+
 }
 
 let clearBoard = (clearGrid = true) => {
@@ -220,19 +237,18 @@ for (const [key, preset] of Object.entries(userPresets)) {
 
 resizeCanvas()
 
-canvas.addEventListener('mousedown', () => drag = true)
-canvas.addEventListener('mouseup', () => drag = false)
-canvas.addEventListener('mousemove', handleMouseClick)
-canvas.addEventListener('click', handleMouseClick)
-window.addEventListener('resize', resizeCanvas, false)
+canvas.addEventListener('mousedown', () => {
+    drag = true
+})
 
-let cellSizeInput = document.querySelector('#cell-size-input')
-let cellColorInput = document.querySelector('#cell-color-input')
-let applySettingButton = document.querySelector('#apply-button')
-let clearBoardButton = document.querySelector('#clear-button')
-let exportButton = document.querySelector('#export-button')
-let importButton = document.querySelector('#import-button')
-let saveButton = document.querySelector('#save-button')
+canvas.addEventListener('mouseup', () => {
+    drag = false
+    dragged = new Set()
+})
+
+canvas.addEventListener('mousemove', handleMouseClick)
+canvas.addEventListener('click', (event) => {handleMouseClick(event, bypassDragCheck=true)})
+window.addEventListener('resize', resizeCanvas, false)
 
 cellSizeInput.value = cell_size
 cellColorInput.value = cell_color
