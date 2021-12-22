@@ -196,6 +196,7 @@ let savePreset = (name = '') => {
     preset = new Preset(maxX-minX, maxY-minY, newArr)
     userPresets[name] = preset
     localStorage.setItem('userPresets', JSON.stringify(userPresets))
+    addUserPresetMenu(name)
 }
 
 for (const [key, preset] of Object.entries(presets)) {
