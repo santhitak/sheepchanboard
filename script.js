@@ -18,6 +18,8 @@ class Preset {
 
 let presets = {
     ">o<":{"width":17,"height":12,"grids":["0-0","1-0","2-1","3-1","4-2","3-3","2-3","1-4","0-4","3-6","0-7","1-6","2-7","4-8","5-7","6-7","4-10","4-11","4-9","5-12","6-12","8-11","7-11","9-11","10-11","8-8","7-8","9-8","10-8","11-7","12-7","13-8","13-9","13-10","13-11","12-12","11-12","14-6","15-7","17-7","16-6","15-1","17-0","15-3","13-2","14-3","14-1","16-4","17-4","16-0"]},
+    "uwu":{"width":19,"height":8,"grids":["1-0","1-1","1-2","1-3","1-4","2-5","3-5","4-5","5-4","5-3","5-2","5-1","5-0","2-4","4-4","7-1","7-2","8-3","8-4","9-5","10-4","11-5","12-4","12-3","13-2","13-1","15-0","15-1","15-2","15-3","15-4","16-4","16-5","17-5","18-5","18-4","19-4","19-0","19-1","19-2","19-3","1-7","0-8","2-8","3-7","5-7","4-8","15-7","14-8","17-7","16-8","18-8","19-7"]}
+
 }
 
 let userPresets = JSON.parse(localStorage.getItem('userPresets')) || {}
@@ -25,12 +27,12 @@ let userPresets = JSON.parse(localStorage.getItem('userPresets')) || {}
 let drawBorder = () => {
     ctx.beginPath()
     for (let i = 1; i < ny; i++) {
-        ctx.moveTo(0, i * cell_size)
-        ctx.lineTo(width, i * cell_size)
+        ctx.moveTo(0, i * cell_size + 1)
+        ctx.lineTo(width, i * cell_size - 1)
     }
     for (let i = 1; i < nx; i++) {
-        ctx.moveTo(i * cell_size, 0)
-        ctx.lineTo(i * cell_size, height)
+        ctx.moveTo(i * cell_size + 1, 0)
+        ctx.lineTo(i * cell_size + 1, height)
     }
     ctx.strokeStyle = '#00FFFF'
     ctx.lineWidth = 2
