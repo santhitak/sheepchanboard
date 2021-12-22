@@ -223,6 +223,7 @@ resizeCanvas()
 canvas.addEventListener('mousedown', () => drag = true)
 canvas.addEventListener('mouseup', () => drag = false)
 canvas.addEventListener('mousemove', handleMouseClick)
+canvas.addEventListener('click', handleMouseClick)
 window.addEventListener('resize', resizeCanvas, false)
 
 let cellSizeInput = document.querySelector('#cell-size-input')
