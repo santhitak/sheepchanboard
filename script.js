@@ -217,7 +217,7 @@ for (const [key, preset] of Object.entries(userPresets)) {
 }
 
 resizeCanvas()
-canvas.addEventListener('click', handleMouseClick)
+canvas.addEventListener('mousemove', handleMouseClick)
 window.addEventListener('resize', resizeCanvas, false)
 
 let cellSizeInput = document.querySelector('#cell-size-input')
