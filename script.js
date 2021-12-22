@@ -20,130 +20,119 @@ class Preset {
 }
 
 let presets = {
-    'square': new Preset(10, 10, 
-    [
-    {
-        'value': "2,0"
-    },
-    {
-        'value': "1,0"
-    },
-    {
-        'value': "0,0"
-    },
-    {
-        'value': "0,1"
-    },
-    {
-        'value': "0,2"
-    },
-    {
-        'value': "0,3"
-    },
-    {
-        'value': "0,4"
-    },
-    {
-        'value': "0,5"
-    },
-    {
-        'value': "0,6"
-    },
-    {
-        'value': "0,7"
-    },
-    {
-        'value': "0,8"
-    },
-    {
-        'value': "0,9"
-    },
-    {
-        'value': "1,9"
-    },
-    {
-        'value': "3,9"
-    },
-    {
-        'value': "4,9"
-    },
-    {
-        'value': "2,9"
-    },
-    {
-        'value': "5,9"
-    },
-    {
-        'value': "6,9"
-    },
-    {
-        'value': "7,9"
-    },
-    {
-        'value': "8,9"
-    },
-    {
-        'value': "9,9"
-    },
-    {
-        'value': "9,7"
-    },
-    {
-        'value': "9,8"
-    },
-    {
-        'value': "9,3"
-    },
-    {
-        'value': "9,0"
-    },
-    {
-        'value': "9,1"
-    },
-    {
-        'value': "9,2"
-    },
-    {
-        'value': "9,6"
-    },
-    {
-        'value': "9,4"
-    },
-    {
-        'value': "9,5"
-    },
-    {
-        'value': "8,0"
-    },
-    {
-        'value': "7,0"
-    },
-    {
-        'value': "5,0"
-    },
-    {
-        'value': "4,0"
-    },
-    {
-        'value': "3,0"
-    },
-    {
-        'value': "6,0"
-    },
-]),
-    '>_<': new Preset(17, 10, [
-    {
-        "value": "0,5"
-    },
-    {
-        "value": "1,5"
-    },
-    {
-        "value": "1,2"
-    },
-    {
-        "value": "1,1"
-    },
+    'square': new Preset(10, 10,
+        [
+            {
+                'value': "2,0"
+            },
+            {
+                'value': "1,0"
+            },
+            {
+                'value': "0,0"
+            },
+            {
+                'value': "0,1"
+            },
+            {
+                'value': "0,2"
+            },
+            {
+                'value': "0,3"
+            },
+            {
+                'value': "0,4"
+            },
+            {
+                'value': "0,5"
+            },
+            {
+                'value': "0,6"
+            },
+            {
+                'value': "0,7"
+            },
+            {
+                'value': "0,8"
+            },
+            {
+                'value': "0,9"
+            },
+            {
+                'value': "1,9"
+            },
+            {
+                'value': "3,9"
+            },
+            {
+                'value': "4,9"
+            },
+            {
+                'value': "2,9"
+            },
+            {
+                'value': "5,9"
+            },
+            {
+                'value': "6,9"
+            },
+            {
+                'value': "7,9"
+            },
+            {
+                'value': "8,9"
+            },
+            {
+                'value': "9,9"
+            },
+            {
+                'value': "9,7"
+            },
+            {
+                'value': "9,8"
+            },
+            {
+                'value': "9,3"
+            },
+            {
+                'value': "9,0"
+            },
+            {
+                'value': "9,1"
+            },
+            {
+                'value': "9,2"
+            },
+            {
+                'value': "9,6"
+            },
+            {
+                'value': "9,4"
+            },
+            {
+                'value': "9,5"
+            },
+            {
+                'value': "8,0"
+            },
+            {
+                'value': "7,0"
+            },
+            {
+                'value': "5,0"
+            },
+            {
+                'value': "4,0"
+            },
+            {
+                'value': "3,0"
+            },
+            {
+                'value': "6,0"
+            },
+        ]),
+    
+    '>o<': new Preset(18, 13, [
     {
         "value": "1,0"
     },
@@ -151,104 +140,159 @@ let presets = {
         "value": "2,0"
     },
     {
-        "value": "2,1"
+        "value": "3,1"
     },
     {
-        "value": "2,2"
+        "value": "4,1"
     },
     {
-        "value": "6,8"
+        "value": "5,2"
     },
     {
-        "value": "7,9"
+        "value": "4,3"
     },
     {
-        "value": "8,9"
+        "value": "3,3"
     },
     {
-        "value": "9,9"
+        "value": "2,4"
+    },
+    {
+        "value": "1,4"
+    },
+    {
+        "value": "1,6"
+    },
+    {
+        "value": "0,7"
+    },
+    {
+        "value": "2,7"
+    },
+    {
+        "value": "3,6"
+    },
+    {
+        "value": "4,8"
+    },
+    {
+        "value": "4,9"
+    },
+    {
+        "value": "4,10"
+    },
+    {
+        "value": "4,11"
+    },
+    {
+        "value": "5,12"
+    },
+    {
+        "value": "6,12"
+    },
+    {
+        "value": "7,11"
+    },
+    {
+        "value": "9,11"
+    },
+    {
+        "value": "10,11"
+    },
+    {
+        "value": "8,11"
+    },
+    {
+        "value": "11,12"
+    },
+    {
+        "value": "12,12"
+    },
+    {
+        "value": "13,11"
+    },
+    {
+        "value": "13,8"
+    },
+    {
+        "value": "13,9"
+    },
+    {
+        "value": "13,10"
+    },
+    {
+        "value": "12,7"
+    },
+    {
+        "value": "11,7"
+    },
+    {
+        "value": "9,8"
+    },
+    {
+        "value": "6,7"
+    },
+    {
+        "value": "5,7"
+    },
+    {
+        "value": "8,8"
+    },
+    {
+        "value": "7,8"
     },
     {
         "value": "10,8"
     },
     {
-        "value": "15,5"
+        "value": "14,6"
     },
     {
-        "value": "16,5"
+        "value": "16,6"
     },
     {
-        "value": "14,2"
+        "value": "15,7"
     },
     {
-        "value": "15,1"
+        "value": "17,7"
     },
     {
-        "value": "15,0"
+        "value": "13,3"
     },
     {
-        "value": "14,0"
+        "value": "14,3"
+    },
+    {
+        "value": "16,4"
+    },
+    {
+        "value": "15,4"
+    },
+    {
+        "value": "12,2"
+    },
+    {
+        "value": "13,1"
     },
     {
         "value": "14,1"
     },
     {
-        "value": "15,2"
+        "value": "15,0"
+    },
+    {
+        "value": "16,0"
     }
-]),
-    '>_< 2': new Preset(12, 7, [
-    {
-        "value": "0,0"
-    },
-    {
-        "value": "1,1"
-    },
-    {
-        "value": "2,2"
-    },
-    {
-        "value": "1,3"
-    },
-    {
-        "value": "0,4"
-    },
-    {
-        "value": "4,6"
-    },
-    {
-        "value": "5,6"
-    },
-    {
-        "value": "6,6"
-    },
-    {
-        "value": "7,6"
-    },
-    {
-        "value": "11,4"
-    },
-    {
-        "value": "10,3"
-    },
-    {
-        "value": "9,2"
-    },
-    {
-        "value": "10,1"
-    },
-    {
-        "value": "11,0"
-    }
-]),
+])
 };
 
 let drawBorder = () => {
     ctx.beginPath()
-    for (let i = 1; i < ny; i++){
+    for (let i = 1; i < ny; i++) {
         ctx.moveTo(0, i * cell_size)
         ctx.lineTo(width, i * cell_size)
     }
-    for (let i = 1; i < nx; i++){
+    for (let i = 1; i < nx; i++) {
         ctx.moveTo(i * cell_size, 0)
         ctx.lineTo(i * cell_size, height)
     }
@@ -318,10 +362,10 @@ let loadPreset = (name) => {
     const preset = presets[name]
     const offsetX = Math.floor(nx / 2 - Math.floor(preset.width) / 2)
     const offsetY = Math.floor(ny / 2 - Math.floor(preset.height) / 2)
-    for (const cord of preset.grids){
+    for (const cord of preset.grids) {
         posXY = `${parseInt(cord.value.split(',')[0]) + offsetX},${parseInt(cord.value.split(',')[1]) + offsetY}`
         grids.add(posXY)
-        drawCell(posXY) 
+        drawCell(posXY)
     }
 }
 
@@ -329,7 +373,7 @@ let addPresetMenu = (preset, name) => {
     const element = document.createElement('button');
     element.textContent = name
     element.setAttribute('class', 'm-4 bg-green-300 p-4 rounded')
-    element.addEventListener('click', () => {loadPreset(name)})
+    element.addEventListener('click', () => { loadPreset(name) })
     presetDOM.appendChild(element)
 }
 
@@ -345,4 +389,6 @@ applySettingButton.addEventListener('click', (event) => {
     cell_size = parseInt(cellSizeInput.value)
     clearBoard()
     drawAll()
+    nx = Math.floor(width / cell_size)
+    ny = Math.floor(height / cell_size)
 })
