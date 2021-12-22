@@ -342,6 +342,7 @@ let handleMouseClick = (event) => {
 }
 
 let clearBoard = () => {
+    grids = new Set()
     ctx.beginPath()
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.stroke()
@@ -360,7 +361,6 @@ let loadPreset = (name) => {
     const preset = presets[name]
     const offsetX = Math.floor(nx / 2 - Math.floor(preset.width) / 2)
     const offsetY = Math.floor(ny / 2 - Math.floor(preset.height) / 2)
-    grids = new Set()
     for (const cord of preset.grids) {
         posXY = `${parseInt(cord.value.split(',')[0]) + offsetX},${parseInt(cord.value.split(',')[1]) + offsetY}`
         grids.add(posXY)
