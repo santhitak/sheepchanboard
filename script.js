@@ -17,7 +17,7 @@ class Preset {
 }
 
 let presets = {
-    
+    ">o<":{"width":17,"height":12,"grids":["0-0","1-0","2-1","3-1","4-2","3-3","2-3","1-4","0-4","3-6","0-7","1-6","2-7","4-8","5-7","6-7","4-10","4-11","4-9","5-12","6-12","8-11","7-11","9-11","10-11","8-8","7-8","9-8","10-8","11-7","12-7","13-8","13-9","13-10","13-11","12-12","11-12","14-6","15-7","17-7","16-6","15-1","17-0","15-3","13-2","14-3","14-1","16-4","17-4","16-0"]},
 }
 
 let userPresets = JSON.parse(localStorage.getItem('userPresets')) || {}
@@ -115,12 +115,12 @@ let loadUserPresetName = (name) => {
     loadPreset(preset)
 }
 
-let addPresetMenu = (preset) => {
+let addPresetMenu = (name) => {
     const presetDOM = document.querySelector('#preset')
     const element = document.createElement('button');
-    element.textContent = preset.name
+    element.textContent = name
     element.setAttribute('class', 'm-4 bg-green-300 p-4 rounded')
-    element.addEventListener('click', () => { loadPresetName(preset.name) })
+    element.addEventListener('click', () => { loadPresetName(name) })
     presetDOM.appendChild(element)
 }
 
@@ -152,6 +152,7 @@ let exportPreset = () => {
         alert('Copied to clipboard')
       }, function(err) {
         textToClipboard(exportString)
+        alert('I am not sure if copy to clipboard worked, check that')
       });
 }
 
@@ -202,7 +203,7 @@ let savePreset = (name = '') => {
 }
 
 for (const [key, preset] of Object.entries(presets)) {
-    addPresetMenu(preset, key)
+    addPresetMenu(key)
 }
 
 for (const [key, preset] of Object.entries(userPresets)) {
