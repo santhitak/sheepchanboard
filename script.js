@@ -7,6 +7,8 @@ let ny = Math.floor(height / cell_size)
 let canvas = document.querySelector('#mycanvas')
 let ctx = canvas.getContext('2d')
 
+let cell_color = '#FF007F'
+
 class Preset {
     constructor(width, height, grids) {
         // grids = array of object (what you get when copying the set from console)
@@ -40,7 +42,7 @@ let drawBorder = () => {
 }
 
 let drawCell = (cord) => {
-    ctx.fillStyle = '#FF007F'
+    ctx.fillStyle = cell_color
     x = cord.split('-')[0]
     y = cord.split('-')[1]
     ctx.fillRect(cell_size * x + 1, cell_size * y + 1, cell_size - 1, cell_size - 1)
@@ -217,6 +219,7 @@ canvas.addEventListener('click', handleMouseClick)
 window.addEventListener('resize', resizeCanvas, false)
 
 let cellSizeInput = document.querySelector('#cell-size-input')
+let cellColorInput = document.querySelector('#cell-color-input')
 let applySettingButton = document.querySelector('#apply-button')
 let clearBoardButton = document.querySelector('#clear-button')
 let exportButton = document.querySelector('#export-button')
@@ -224,6 +227,7 @@ let importButton = document.querySelector('#import-button')
 let saveButton = document.querySelector('#save-button')
 
 cellSizeInput.value = cell_size
+cellColorInput.value = cell_color
 
 exportButton.addEventListener('click', (event) => {
     exportPreset()
@@ -245,6 +249,7 @@ applySettingButton.addEventListener('click', (event) => {
     }
     nx = Math.floor(width / cell_size)
     ny = Math.floor(height / cell_size)
+    cell_color = cellColorInput.value
     clearBoard(clearGrid=false)
     drawAll()
 })
