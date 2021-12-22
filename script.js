@@ -78,8 +78,8 @@ let handleMouseClick = (event) => {
     }
 }
 
-let clearBoard = () => {
-    grids = new Set()
+let clearBoard = (clearGrid = true) => {
+    if (clearGrid) {grids = new Set()}
     ctx.beginPath()
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.stroke()
@@ -243,7 +243,7 @@ applySettingButton.addEventListener('click', (event) => {
     }
     nx = Math.floor(width / cell_size)
     ny = Math.floor(height / cell_size)
-    clearBoard()
+    clearBoard(clearGrid=false)
     drawAll()
 })
 
