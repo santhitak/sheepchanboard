@@ -6,9 +6,8 @@ let width = window.innerWidth
 let canvas = document.querySelector('#mycanvas')
 let ctx = canvas.getContext('2d')
 
-ctx.beginPath()
-
 let drawBorder = () => {
+    ctx.beginPath()
     for (let i = 0; i < height; i += cell_size){
         ctx.moveTo(0, i)
         ctx.lineTo(width, i)
@@ -28,7 +27,6 @@ let drawCell = (cord) => {
     y = cord.split(',')[1]
     ctx.fillRect(cell_size * x + 1, cell_size * y + 1, cell_size - 1, cell_size - 1)
     ctx.stroke()
-    drawBorder()
 }
 
 let eraseCell = (cord) => {
@@ -43,8 +41,7 @@ let resizeCanvas = () => {
     canvas.height = window.innerHeight
     width = window.innerWidth
     height = window.innerHeight
-
-    //updateCanvas()
+    drawBorder()
 }
 
 let handleMouseClick = (event) => {
@@ -63,24 +60,25 @@ let handleMouseClick = (event) => {
 }
 
 let drawAll = () => {
-    for (let cord in grids) {
+    ctx.beginPath()
+    for (let cord of grids) {
         drawCell(cord)
     }
 }
 
 resizeCanvas()
-drawBorder()
 
 canvas.addEventListener('click', handleMouseClick)
 window.addEventListener('resize', resizeCanvas, false)
 
-const cellSizeInput = document.querySelector('#cell-size-input')
-cellSizeInput.value = cell_size
-cellSizeInput.addEventListener('input', (event) => {
-    cell_size = cellSizeInput.value
+let cellSizeInput = document.querySelector('#cell-size-input')
+let applySettingButton = document.querySelector('#apply-button')
+
+applySettingButton.addEventListener('click', (event) => {
+    cell_size = parseInt(cellSizeInput.value)
     ctx.beginPath()
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.stroke()
     drawBorder()
     drawAll()
-    
 })
