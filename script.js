@@ -6,6 +6,7 @@ let nx = Math.floor(width / cell_size)
 let ny = Math.floor(height / cell_size)
 let canvas = document.querySelector('#mycanvas')
 let ctx = canvas.getContext('2d')
+let drag = false
 
 let cell_color = '#FF007F'
 
@@ -70,6 +71,7 @@ let resizeCanvas = () => {
 }
 
 let handleMouseClick = (event) => {
+    if (!drag) return
     const rect = canvas.getBoundingClientRect()
     x = event.clientX - rect.left
     y = event.clientY - rect.top
@@ -218,7 +220,9 @@ for (const [key, preset] of Object.entries(userPresets)) {
 
 resizeCanvas()
 
-canvas.addEventListener('mousedown', handleMouseClick)
+canvas.addEventListener('mousedown', () => drag = true)
+canvas.addEventListener('mouseup', () => drag = false)
+canvas.addEventListener('mousemove', handleMouseClick)
 window.addEventListener('resize', resizeCanvas, false)
 
 let cellSizeInput = document.querySelector('#cell-size-input')
