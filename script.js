@@ -388,12 +388,14 @@ let cellSizeInput = document.querySelector('#cell-size-input')
 let applySettingButton = document.querySelector('#apply-button')
 let clearBoardButton = document.querySelector('#clear-button')
 
+cellSizeInput.value = cell_size
+
 applySettingButton.addEventListener('click', (event) => {
     cell_size = parseInt(cellSizeInput.value)
-    clearBoard()
-    drawAll()
     nx = Math.floor(width / cell_size)
     ny = Math.floor(height / cell_size)
+    clearBoard()
+    drawAll()
 })
 
 clearBoardButton.addEventListener('click', (event) => {
