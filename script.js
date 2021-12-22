@@ -7,8 +7,6 @@ let ny = Math.floor(height / cell_size)
 let presetDOM = document.querySelector('#preset')
 let canvas = document.querySelector('#mycanvas')
 let ctx = canvas.getContext('2d')
-let cellSizeInput = document.querySelector('#cell-size-input')
-let applySettingButton = document.querySelector('#apply-button')
 
 class Preset {
     constructor(width, height, grids) {
@@ -385,10 +383,18 @@ resizeCanvas()
 canvas.addEventListener('click', handleMouseClick)
 window.addEventListener('resize', resizeCanvas, false)
 
+let cellSizeInput = document.querySelector('#cell-size-input')
+let applySettingButton = document.querySelector('#apply-button')
+let clearBoardButton = document.querySelector('#clear-button')
+
 applySettingButton.addEventListener('click', (event) => {
     cell_size = parseInt(cellSizeInput.value)
     clearBoard()
     drawAll()
     nx = Math.floor(width / cell_size)
     ny = Math.floor(height / cell_size)
+})
+
+clearBoardButton.addEventListener('click', (event) => {
+    clearBoard()
 })
