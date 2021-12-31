@@ -44,11 +44,11 @@ let userPresets = JSON.parse(localStorage.getItem('userPresets')) || {}
 
 let drawBorder = () => {
     ctx.beginPath()
-    for (let i = 1; i < ny; i++) {
+    for (let i = 1; i <= ny; i++) {
         ctx.moveTo(0, i * cell_size + 1)
         ctx.lineTo(width, i * cell_size - 1)
     }
-    for (let i = 1; i < nx; i++) {
+    for (let i = 1; i <= nx; i++) {
         ctx.moveTo(i * cell_size + 1, 0)
         ctx.lineTo(i * cell_size + 1, height)
     }
