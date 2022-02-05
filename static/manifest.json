@@ -1,0 +1,17 @@
+{
+    "name": "sheep chan board",
+    "short_name": "sheepboard",
+    "theme_color": "#ffdfd3",
+    "background_color": "#957dad",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "https://sheepchanboard.netlify.app",
+    "description": "sheep chan board",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "https://cdn.discordapp.com/attachments/878989758850822147/879001815386046494/images.png",
+            "sizes": "1024x1024"
+        }
+    ]
+}

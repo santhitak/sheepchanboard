@@ -27,12 +27,5 @@
         </div>
     </div>
     <script src="./script.js"></script>
-    <script>
-        if (!navigator.serviceWorker.controller) {
-            navigator.serviceWorker.register('/worker.js').then((reg) => {
-                console.log('Service worker has been registered for scope: ' + reg.scope)
-            })
-        }
-    </script>
 </body>
 </html>
