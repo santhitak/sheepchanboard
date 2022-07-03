@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,30 @@
     <link href="style.css" type="text/css" rel="stylesheet">
     <link rel="manifest" href="/static/manifest.json">
 </head>
+
 <body>
     <canvas id="mycanvas" style="background-color: white"></canvas>
     <div id="settings">
-        Cell size (px) : <input id="cell-size-input" type="number">
-        Color : <input id="cell-color-input" type="text">
-        <button id="apply-button">Apply</button>
-        <br>
-        <button id="clear-button">Clear Board</button>
-        <button id="export-button">Export Preset</button>
-        <button id="import-button">Import Preset</button>
-        <button id="save-button">Save Preset</button>
-        <div id="preset" class="m-4">
-            Preset:
+        <div style="display: flex; align-items: center">
+            Cell size (px) : <input id="cell-size-input" type="number">
+            Color : <input id="cell-color-input" type="text">
+            <svg id="cell-color-preview">
+                <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5" />
+            </svg>
+            <button id="apply-button">Apply</button>
         </div>
-        <div id="user-preset" class="m-4">
-            User Preset:
-        </div>
+    </div>
+    <br>
+    <button id="clear-button">Clear Board</button>
+    <button id="export-button">Export Preset</button>
+    <button id="import-button">Import Preset</button>
+    <button id="save-button">Save Preset</button>
+    <div id="preset" class="m-4">
+        Preset:
+    </div>
+    <div id="user-preset" class="m-4">
+        User Preset:
+    </div>
     </div>
     <script src="./script.js"></script>
     <script>
@@ -35,4 +43,5 @@
         }
     </script>
 </body>
+
 </html>
